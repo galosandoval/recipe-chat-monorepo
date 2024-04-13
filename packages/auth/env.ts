@@ -3,12 +3,11 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    AUTH_DISCORD_ID: z.string().min(1),
-    AUTH_DISCORD_SECRET: z.string().min(1),
-    AUTH_SECRET:
-      process.env.NODE_ENV === "production"
-        ? z.string().min(1)
-        : z.string().min(1).optional(),
+    BLOB_READ_WRITE_TOKEN: z.string(),
+    DATABASE_URL: z.string(),
+    OPENAI_API_KEY: z.string(),
+    NEXTAUTH_SECRET: z.string(),
+    NEXTAUTH_URL: z.string(),
   },
   client: {},
   experimental__runtimeEnv: {},
